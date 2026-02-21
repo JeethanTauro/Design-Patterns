@@ -1,0 +1,38 @@
+Definition:
+    -Singleton pattern is a pattern where a class can have only one instance,
+     and have a global point of access to that instance
+    -so basically the class can have only one object.
+
+How to do it?
+    -well, we have to use the concept of private constructors and static methods
+    -if a class has private constructor then no other class can instantiate it.
+    -but there is a way around it, we can use an if condition with the static keyword
+     to make sure only one object can be created.
+
+Why singleton pattern?
+    -well for logging we have logger object, for example in spring boot framework we have
+     sl4j logger, which behaves like a singleton object because we don't want multiple
+     logger objects writing different things at the same time it would be chaos
+    -cache manager
+    -Database connection pool also requires a single connection object not multiple
+    -Normally modern frameworks do the job as they handle the object lifecycle
+
+Multithreading concern:
+    -now see multiple threads can run at the same time and then 2 or mor threads can call the getInstance method
+     at the same time and now guess what, 2 instances of the classes have been created because both of them at the exact
+     time saw that initially no object was created and hence both of them created it.
+    -This causes an issue, we tried to implement simpleton pattern but multithreading issue is breaking it
+    -So the solution is we can us the  `synchronised` keyword on the getInstance method so that no 2 threads can call it at
+     the same time, the threads have to wait.
+    -But it introduces another problem and that is synchronisation overhead, we need to have synchronisation only when the object
+     has to be created the first time, once its created we don't need to synchronise anymore.
+    -Solution 1:
+        we can keep the keep the synchronised keyword as it is as if the code isnt that critical (but remember
+        synchronised keyword lowers performance by a factor of 100)
+    -Solution 2:
+        we can use an Eager method of creating the object rather than lazy method
+    -Solution 3:
+        if the instance exists, return that instance, if not only then use the synchronised keyword
+        this is called double check locking
+    -Solution 4:
+        This is the most robust and clean way of implementation, use enums, enums can have methods and fields
