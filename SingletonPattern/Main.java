@@ -13,6 +13,11 @@ public class Main {
 
 
         //<-----EAGER INSTANCE---->
+        Database database = Database.getInstance();
+        Database database1 = Database.getInstance();
+
+        System.out.println(database1.hashCode());
+        System.out.println(database.hashCode());
 
     }
 }
