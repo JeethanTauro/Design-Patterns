@@ -3,6 +3,25 @@ package SingletonPattern;
 public class Main {
     public static void main(String[] args) {
 
+        //Creation of threads
+        // here there are 2 threads going to create cache instances
+
+        Thread thread1 = new Thread(){
+            public void run(){
+                Cache cache1= Cache.getInstance();
+                System.out.println(cache1.hashCode());
+            }
+        };
+        Thread thread2 = new Thread(){
+            public void run(){
+                Cache cache2 = Cache.getInstance();
+                System.out.println(cache2.hashCode());
+            }
+        };
+
+        thread1.start();
+        thread2.start();
+
         //<------LAZY instance------->
         //Logger logger = new Logger(); //this will not work
         Logger logger = Logger.getInstance();
