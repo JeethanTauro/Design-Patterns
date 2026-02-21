@@ -38,5 +38,13 @@ public class Main {
         System.out.println(database1.hashCode());
         System.out.println(database.hashCode());
 
+        //<-----ENUM method------>
+        UniqueClass u1 = UniqueClass.INSTANCE;
+        UniqueClass u2 = UniqueClass.INSTANCE;
+        System.out.println(u1.hashCode());
+        System.out.println(u2.hashCode());
+        u2.setValue(10);
+        System.out.println(u1.getValue());
+
     }
 }
