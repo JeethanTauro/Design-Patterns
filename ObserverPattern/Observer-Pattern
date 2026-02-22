@@ -1,0 +1,28 @@
+Definition:
+    -The observer pattern defines one to many dependency between objects so that
+     when one object changes state the dependent objects are notified and updated
+     about the change
+    -The object which is being observed by other objects is called as the subject or
+     observable, the dependent or subscribed objects are called as observers
+
+
+
+
+How to do it:
+    -So we mainly have 2 interfaces, One interface is the Subject interface in which we have the 3 main methods
+     that is the registerObservers(), removeObservers(), notifyObservers().
+     these three are implemented by concrete classes as per the requirements.
+    -The other interface is the Observer interface which has one method, update(), here i have implemented two methods
+     pushUpdate and pullUpdate, pushUpdate is the method where the subject pushes the state changes, in pullUpdate
+     the subject sends itself and then the observer pulls the data, that's the only main difference. But the
+     main idea is that the subject calls the observers update method during the notify method.
+
+
+Why observer pattern:
+    -Well observer pattern helps in defining loose coupling architecture where if two objects need to know some info
+     about one another then they need not be too interdependent on each other
+    -mainly used in such scenarios where state change in one object needs to be known by other objects
+    -used in UI buttons, used in Spring application context, used in messaging systems, notification systems
+
+
+
