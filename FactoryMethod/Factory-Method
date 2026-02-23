@@ -1,0 +1,18 @@
+Definition:
+    -The factory design pattern is basically where an interface or an abstract class is defined for creating the object
+     but the object creation is delegated to the subclass of the abstract class or the interface
+     So basically instead of using new keyword for creation of objects the class calls methods of the subclasses creating the object
+    -So essentially its "stop using the new keyword instead create a dedicated class whose job is to create objects with some logic"
+
+
+How is it done:
+    -We have a "Product" interface and "Concrete Products" classes and then we have a "Creator" interface and the "Concrete Creator"
+    -the concrete creator creates object of the type Product
+    -In the example we can see a family of Products that is the Notification and then we can see family of Creators that is the Notification Service
+    -The Notification service is used to notify and it needs object of the type Notification, but the type of objects created depends on the Concrete creating classes
+    -The Notification service has an abstract method of creation of objects which is implemented by its subclasses
+
+
+
+Why Factory method:
+    -The main use case is of abstracting away the creation of objects
