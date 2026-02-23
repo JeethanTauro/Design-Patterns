@@ -1,0 +1,16 @@
+Definition:
+    -Dependency injection is a programming paradigm where instead of a class creating the objects it requires,
+     the object is created elsewhere and then the object is just given to the class.
+
+
+
+How to do it:
+    -Its mainly done with the use-case of interfaces where there would be multiple implementations of the interface
+
+
+
+
+Why dependency injection:
+    -Its mainly done to avoid tight coupling of classes and encourage loosely coupled code
+    -If the implementation changes then we just have to give a different object rather than do changes in the class
+     which also encourages the Open-Close principles of SOLID principles
