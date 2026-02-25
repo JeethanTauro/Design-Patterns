@@ -1,0 +1,14 @@
+Definition:
+    -Builder pattern is a pattern where we can use the same construction structure to
+     represent different variations of the object
+
+
+
+How is it done:
+
+
+
+Why Builder-Pattern:
+    -If an object has a lot of fields to be initialised, then using a constructor becomes hectic and difficult
+     as we have to enter a lot of constructor params and in the correct order and if some fields need not be set then we
+     have to pass null.
