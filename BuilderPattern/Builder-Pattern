@@ -5,7 +5,8 @@ Definition:
 
 
 How is it done:
-
+    -Done using a private constructor so that the client is forced to use the static inner class
+     and then the object is returned for method chaining.
 
 
 Why Builder-Pattern:
