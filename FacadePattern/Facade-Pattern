@@ -1,0 +1,13 @@
+Definition:
+    -The Facade pattern is a structural design pattern where there is high level interface for a set
+     of complex subsystem interfaces
+
+How is it done:
+    -Using the concept of dependency injection and loosely coupling required classes and interfaces and providing
+     a single interface that delegates the work
+
+
+Why Facade Pattern:
+    -Facade pattern is basically used for reducing complexity on the client side, the client using the features
+     doesn't have to work with any of the complex implementation but only a simple api provided by the pattern
+
