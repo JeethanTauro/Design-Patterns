@@ -1,0 +1,26 @@
+Definition:
+    -The command pattern is used to convert a request or command into an object by encapsulating it with all
+     the required data, methods,arguments etc
+    -Instead of the object calling its method directly, the object is given to a command object which then calls
+     the execute method, which inturn calls the method of the object
+
+
+
+How is it done:
+    -there is mainly a Command interface that has 2 methods, execute and unexecute, the unexcute method is used to undo
+     whatever the execute method had just done
+    -Concrete command classes that implement the command interface and define the execute and the unexecute method (there could be many command classes)
+    -The actual business logic object that does the real work (e.g., a Database, a Light, a Document).
+    -The invoker is the object that holds the command and triggers (it knows nothing about the receiver)
+    -The client is the  main application code that creates the Receivers, creates the Concrete Commands, and wires them into the Invokers.
+
+
+
+
+Why command pattern:
+    -Strict Decoupling (Open/Closed Principle): The Invoker (the GUI button or remote) is completely decoupled from the Receiver
+     (the business logic). You can introduce new commands (like LockDoorsCommand) into the app without changing a single line of code in the RemoteControl class.
+    -Implementing Undo/Redo: Because every action is stored as an object, you can easily push these objects onto a Stack memory
+     structure. If a user hits Ctrl+Z, you just pop the last Command off the stack and call its undo() method. This is exactly how Photoshop, Microsoft Word, and IntelliJ track your history.
+    -Queuing and Scheduling Requests: Because a command is just a data object, you can serialize it, put it in a list, save it to a database, or
+     send it over a network. This is how job queues work. You put 1,000 ImageRenderCommand objects into a queue, and a pool of background threads picks them up one by one and calls execute().
